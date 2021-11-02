@@ -1,0 +1,75 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a (click)="filter('')">
+        <img
+          src="https://www.svgrepo.com/show/212728/gift-present.svg"
+          alt="products"
+        />
+        <h6>All Products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('fashion')">
+        <img
+          src="https://www.svgrepo.com/show/297949/shirt-fashion.svg"
+          alt="fashion"
+        />
+        <h6>Fashion</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('electronics')">
+        <img
+          src="https://www.svgrepo.com/show/202953/laptop-electronics.svg"
+          alt="electronics"
+        />
+        <h6>Electronics</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('jewelery')">
+        <img
+          src="https://www.svgrepo.com/show/37031/jewelry.svg"
+          alt="jewellry"
+        />
+        <h6>Jewellery</h6>
+      </a>
+    </div>
+
+   
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title' ">
+      <div class="card col-md-3">
+        <img src="{{ item.image }}" alt="" />
+        <h5
+          style="
+            white-space: nowwrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.title }}
+        </h5>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.description }}
+        </p>
+        <p><strong>Price:</strong>₹{{ item.price }}</p>
+        <button class="btn btn-primary" (click)="addtocart(item)">
+          Add to cart
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
