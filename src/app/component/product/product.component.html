@@ -44,7 +44,7 @@
   <div class="row">
     <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title' ">
       <div class="card col-md-3">
-        <img src="{{ item.image }}" alt="" />
+        <img src="{{ item.image }}" (click)="viewProductDetails(item)" alt="" />
         <h5
           style="
             white-space: nowwrap;
@@ -66,6 +66,9 @@
           {{ item.description }}
         </p>
         <p><strong>Price:</strong>₹{{ item.price }}</p>
+        <!-- <button class="btn btn-primary" (click)="viewProductDetails(item)">
+          View Details
+        </button> -->
         <button class="btn btn-primary" (click)="addtocart(item)">
           Add to cart
         </button>

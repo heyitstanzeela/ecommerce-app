@@ -10,6 +10,7 @@ import{ HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
     CartComponent,
     ProductComponent,
     FilterPipe,
-    CheckoutComponent
+    CheckoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
